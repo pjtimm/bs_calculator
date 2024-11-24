@@ -49,16 +49,16 @@ st.markdown(custom_css, unsafe_allow_html=True)
 
 # Place the call and put values inside colored boxes in the columns
 with col1:
-    st.markdown(f'<div class="call-box">Call Value = {call_value}</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="call-box">Call Value: ${call_value}</div>', unsafe_allow_html=True)
 
 with col2:
-    st.markdown(f'<div class="put-box">Put Value = {put_value}</div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="put-box">Put Value: ${put_value}</div>', unsafe_allow_html=True)
 
 
 
-st.subheader("How does the asset price affect the option price?",divider="grey")
+st.subheader("How does the spot price affect the option?",divider="grey")
 
-(start,end) = st.slider("Choose a range for the asset price", value = (0.,k*2))
+(start,end) = st.slider("Choose a range for the spot prices", value = (0.,k*2))
 
 fig, ax = assetprice_change_plot(start,end,k,r,vol,t)
 
